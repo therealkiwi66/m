@@ -4,32 +4,84 @@
     <title>Buddhina</title>
     <style>
         body {
+            background-image: url('link.png');
+            background-size: cover;
+            background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            background-color: #f4f4f4;
         }
         #container {
             text-align: center;
+            background-color: #ecd5d5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        #question {
+            text-align: center;
+            background-color: #fff;
+            padding: 5px;
+            font-size: 30px;
+            font-family: Arial, sans-serif;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 30px;
+            width: 600px;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 30px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #word {
+            display: none;
+            margin-top: 10px;
+            padding: 5px;
+            font-size: 30px;
+            font-family: Arial, sans-serif;
         }
     </style>
 </head>
 <body>
     <div id="container">
+        <div id="question">Gutteridge?</div>
         <input type="text" id="inputBox" placeholder="Type here...">
-        <button onclick="checkWord()">Submit</button>
-        <p id="word" style="display: none;">Buona è</p>
+        <br>
+        <button id="submit" onclick="checkWord()">Submit</button>
+        <div id="word" style="display: none; font-family: Arial, sans-serif;">
+            <div>Mi manca il tuo sorriso. Mi manca il tuo profumo. Mi manchi.</div>
+            <div style="font-size: 25px; padding: 10px;">PS: non serve che mi rispondi</div>
+        </div>
     </div>
     <script>
         function checkWord() {
             var inputBox = document.getElementById("inputBox");
-            var fraseSegreta = document.getElementById("word");
+            var word = document.getElementById("word");
+            var question = document.getElementById("question");
+            var submit = document.getElementById("submit");
             
-            if (inputBox.value.toLowerCase() === "marmellata") {
-                fraseSegreta.style.display = "block";
+            if (inputBox.value.toLowerCase() === "no") {
+                inputBox.style.display = "none";
+                submit.style.display = "none";
+                question.style.display = "none";
+                word.style.display = "block";
             } else {
-                alert("Incorrect");
+                alert("Sbagliato");
             }
         }
     </script>
