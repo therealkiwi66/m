@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rivelatore di Frase Segreta</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="inputBox" placeholder="Inserisci la parola chiave">
+        <button onclick="verificaParolaChiave()">Submit</button>
+        <p id="fraseSegreta" style="display: none;">Buona è</p>
+    </div>
+    <script>
+        function verificaParolaChiave() {
+            var inputBox = document.getElementById("inputBox");
+            var fraseSegreta = document.getElementById("fraseSegreta");
+            
+            if (inputBox.value.toLowerCase() === "marmellata") {
+                fraseSegreta.style.display = "block";
+            } else {
+                alert("Parola chiave non valida. Riprova.");
+            }
+        }
+    </script>
+</body>
+</html>
