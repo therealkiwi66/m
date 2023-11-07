@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Rivelatore di Frase Segreta</title>
+    <title>Buddhina</title>
     <style>
         body {
             display: flex;
@@ -17,19 +17,19 @@
 </head>
 <body>
     <div id="container">
-        <input type="text" id="inputBox" placeholder="Inserisci la parola chiave">
-        <button onclick="verificaParolaChiave()">Submit</button>
-        <p id="fraseSegreta" style="display: none;">Buona è</p>
+        <input type="text" id="inputBox" placeholder="Type here...">
+        <button onclick="checkWord()">Submit</button>
+        <p id="word" style="display: none;">Buona è</p>
     </div>
     <script>
-        function verificaParolaChiave() {
+        function checkWord() {
             var inputBox = document.getElementById("inputBox");
-            var fraseSegreta = document.getElementById("fraseSegreta");
+            var fraseSegreta = document.getElementById("word");
             
             if (inputBox.value.toLowerCase() === "marmellata") {
                 fraseSegreta.style.display = "block";
             } else {
-                alert("Parola chiave non valida. Riprova.");
+                alert("Incorrect");
             }
         }
     </script>
